@@ -1,0 +1,148 @@
+{
+  "name": "jc-skills",
+  "version": "1.0.0",
+  "displayName": "JC Multi-Agent SDLC Framework",
+  "description": "Autonomous full-lifecycle SDLC multi-agent framework for Google Antigravity with 17 specialized skills, deterministic state tracking, and quality gates.",
+  "author": "JC",
+  "license": "MIT",
+  "phases": {
+    "A": {
+      "name": "Project Setup",
+      "description": "Executed once per greenfield project to bootstrap architecture, toolchain, structure, and CI.",
+      "skills": [
+        "jc.product-owner",
+        "jc.project-structure",
+        "jc.environment-initializer",
+        "jc.structure-builder",
+        "jc.devops-engineer"
+      ]
+    },
+    "B": {
+      "name": "Per-Story Iterative Loop",
+      "description": "Repeated for each user story with BDD, API contracts, deep specs, implementation, security, QA, SRE, and acceptance sign-off.",
+      "skills": [
+        "jc.analyst",
+        "jc.contract-creator",
+        "jc.ai-engineer",
+        "jc.data-architect",
+        "jc.ux-ui",
+        "jc.backend-expert",
+        "jc.frontend-expert",
+        "jc.cybersecurity",
+        "jc.qa-automation",
+        "jc.sre-performance"
+      ]
+    },
+    "C": {
+      "name": "Project Delivery & Release",
+      "description": "Compiles developer portal, API docs, operational runbooks, and provisions production IaC/CI-CD.",
+      "skills": [
+        "jc.tech-writer",
+        "jc.devops-engineer"
+      ]
+    },
+    "governance": {
+      "name": "Autonomous Governance & Orchestration",
+      "description": "Governs the per-story SDLC lifecycle and state tracking across all skills.",
+      "skills": [
+        "jc.orchestrator"
+      ]
+    }
+  },
+  "skills": [
+    {
+      "name": "jc.orchestrator",
+      "phase": "governance",
+      "description": "Autonomous Pipeline Conductor and Project Governance Specialist."
+    },
+    {
+      "name": "jc.product-owner",
+      "phase": "A",
+      "description": "Agile Product Owner and Business Strategist. Maps user journeys, backlogs, and NFRs."
+    },
+    {
+      "name": "jc.project-structure",
+      "phase": "A",
+      "description": "Lead Software Architect. Defines tech stack, ADR-001, RBAC roles, and project-spec.yml."
+    },
+    {
+      "name": "jc.environment-initializer",
+      "phase": "A",
+      "description": "Toolchain and environment bootstrapping. Sets up virtualenvs, .env, and dev-compose."
+    },
+    {
+      "name": "jc.structure-builder",
+      "phase": "A",
+      "description": "Filesystem scaffolding specialist. Reads project-spec.yml and creates structure."
+    },
+    {
+      "name": "jc.analyst",
+      "phase": "B",
+      "description": "Requirements Analyst. Formulates Gherkin BDD scenarios, NFRs, and conducts sign-off."
+    },
+    {
+      "name": "jc.contract-creator",
+      "phase": "B",
+      "description": "API Contract Specialist. Generates and validates standard JSON API contracts."
+    },
+    {
+      "name": "jc.ai-engineer",
+      "phase": "B",
+      "description": "AI & LLM Systems Architect. Designs generative pipelines, RAG, and vector stores."
+    },
+    {
+      "name": "jc.data-architect",
+      "phase": "B",
+      "description": "Enterprise Data Architect. Designs normalized schemas, indexes, and zero-downtime migrations."
+    },
+    {
+      "name": "jc.ux-ui",
+      "phase": "B",
+      "description": "Design System Architect. Creates Design Tokens, WCAG guidelines, and component states."
+    },
+    {
+      "name": "jc.backend-expert",
+      "phase": "B",
+      "description": "Senior Backend Architect. Builds production-grade APIs, secure logic, and persistence."
+    },
+    {
+      "name": "jc.frontend-expert",
+      "phase": "B",
+      "description": "Senior Frontend Engineer. Builds accessible UI views consuming backend contracts."
+    },
+    {
+      "name": "jc.cybersecurity",
+      "phase": "B",
+      "description": "Security Auditor. Runs SAST, dependency audits, secret scans with zero High/Critical policy."
+    },
+    {
+      "name": "jc.qa-automation",
+      "phase": "B",
+      "description": "Test Automation Engineer. E2E/integration tests, >=80% coverage, axe-core a11y."
+    },
+    {
+      "name": "jc.sre-performance",
+      "phase": "B",
+      "description": "Site Reliability Engineer. Load/stress tests (k6/Locust) and latency SLOs."
+    },
+    {
+      "name": "jc.tech-writer",
+      "phase": "C",
+      "description": "Documentation Architect. ADRs, developer portal, API docs, and runbooks."
+    },
+    {
+      "name": "jc.devops-engineer",
+      "phase": "A/C",
+      "description": "CI/CD & Cloud Specialist. Early CI workflows, hardened Dockerfiles, and production IaC."
+    }
+  ],
+  "rules": [
+    "rules/jc-sdlc-pipeline.md",
+    "AGENTS.md"
+  ],
+  "templates": [
+    "templates/Project-specification/pipeline-state.yml",
+    "templates/Project-specification/decisions.yml",
+    "templates/Project-specification/project-spec.yml"
+  ]
+}

@@ -1,0 +1,28 @@
+language: "es"
+project_name: "{{project_name}}"
+package_name: "{{package_name}}"
+roles:
+  - "admin"
+  - "user"
+architecture: "modular_monolith"
+backend:
+  language: "python"
+  framework: "fastapi"
+frontend:
+  framework: "react"
+  styling: "tailwind"
+database:
+  engine: "postgresql"
+  orm: "sqlalchemy"
+ai:
+  enabled: false
+  provider: null
+  model: null
+  vector_store: null
+cloud:
+  provider: "aws"
+  ci_cd: "github_actions"
+release_horizon: "mvp"
+target_scale: "initial"
+docs:
+  language: "es"

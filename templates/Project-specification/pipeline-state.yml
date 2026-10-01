@@ -1,0 +1,11 @@
+version: "2.0"
+project:
+  name: "{{project_name}}"
+  mode: "greenfield" # greenfield | brownfield | bugfix | refactor
+  setup:
+    project_structure: "not_executed" # not_executed | in_progress | completed
+    environment: "not_executed"
+    scaffolding: "not_executed"
+    dev_compose: "not_executed"
+    base_ci: "not_executed"
+stories: {}

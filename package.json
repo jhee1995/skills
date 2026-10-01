@@ -1,0 +1,41 @@
+{
+  "name": "jc-skills",
+  "version": "1.0.0",
+  "description": "Autonomous full-lifecycle SDLC multi-agent framework for Google Antigravity (17 Specialized Skills + Master Rules + Orchestrator)",
+  "main": "bin/cli.js",
+  "bin": {
+    "jc-skills": "./bin/cli.js",
+    "jc": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "init": "node bin/cli.js init",
+    "list": "node bin/cli.js list",
+    "status": "node bin/cli.js status"
+  },
+  "keywords": [
+    "antigravity",
+    "ai-agents",
+    "skills",
+    "sdlc",
+    "multi-agent",
+    "orchestrator",
+    "software-engineering"
+  ],
+  "author": "JC",
+  "license": "MIT",
+  "files": [
+    "bin",
+    "skills",
+    "rules",
+    "templates",
+    "framework.json",
+    "AGENTS.md",
+    "README.md",
+    "install.ps1",
+    "install.sh"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
