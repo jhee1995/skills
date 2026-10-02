@@ -366,7 +366,13 @@ async function cmdInit(args) {
 function cmdHelp() {
   showBanner();
   console.log(`
-${c.boldWhite('Usage:')}\n  ${c.cyan('node bin/cli.js')} ${c.yellow('<command>')} [options]
+${c.boldWhite('Usage (globally installed):')}
+  ${c.cyan('jc-skills')} ${c.yellow('<command>')} [options]
+  ${c.cyan('jc')} ${c.yellow('<command>')} [options]
+
+${c.boldWhite('Usage (without installing):')}
+  ${c.cyan('npx github:jhee1995/skills')} ${c.yellow('<command>')} [options]
+  ${c.cyan('node bin/cli.js')} ${c.yellow('<command>')} [options]
 
 ${c.boldWhite('Commands:')}
   ${c.boldYellow('init')} | ${c.boldYellow('install')}   Interactive setup wizard to install the framework
@@ -383,24 +389,25 @@ ${c.boldWhite('Options:')}
   ${c.cyan('-f, --force')}         Overwrite existing files
   ${c.cyan('--dest <path>')}       Specify custom installation directory
 
+${c.boldWhite('Global Install (Mac/Linux — no repo clone needed):')}
+  ${c.dim('# Recommended: auto-fixes EACCES permissions on Mac:')}
+  ${c.cyan('curl -fsSL https://raw.githubusercontent.com/jhee1995/skills/main/setup-global.sh | bash')}
+
+  ${c.dim('# Manual global install via npm:')}
+  ${c.cyan('npm install -g github:jhee1995/skills')}
+
 ${c.boldWhite('Examples:')}
-  ${c.dim('# Interactive setup wizard:')}
-  ${c.cyan('node bin/cli.js init')}
+  ${c.dim('# Run from anywhere without installing:')}
+  ${c.cyan('npx github:jhee1995/skills init --local --all')}
 
-  ${c.dim('# Install locally in current project with all templates:')}
-  ${c.cyan('node bin/cli.js init --local --all')}
+  ${c.dim('# After global install — install in current project with templates:')}
+  ${c.cyan('jc-skills init --local --all')}
 
-  ${c.dim('# Install globally for all projects on your machine:')}
-  ${c.cyan('node bin/cli.js init --global')}
+  ${c.dim('# Install in ~/.gemini/config/ (global for all Antigravity projects):')}
+  ${c.cyan('jc-skills init --global')}
 
   ${c.dim('# Check framework status:')}
-  ${c.cyan('node bin/cli.js status')}
-
-  ${c.dim('# Make jc-skills a global terminal command (npm pack → install):')}
-  ${c.cyan('npm pack && npm install -g ./jc-skills-1.0.0.tgz')}
-  ${c.gray('  Note: On Mac/Linux, if you get EACCES run:')}
-  ${c.gray('  mkdir -p ~/.npm-global && npm config set prefix \'~/.npm-global\'')}
-  ${c.gray('  echo \'export PATH=~/.npm-global/bin:$PATH\' >> ~/.zshrc && source ~/.zshrc')}
+  ${c.cyan('jc-skills status')}
 `);
 }
 

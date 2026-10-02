@@ -24,6 +24,10 @@
   ],
   "author": "JC",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhee1995/skills.git"
+  },
   "files": [
     "bin",
     "skills",
@@ -33,7 +37,8 @@
     "AGENTS.md",
     "README.md",
     "install.ps1",
-    "install.sh"
+    "install.sh",
+    "setup-global.sh"
   ],
   "engines": {
     "node": ">=18.0.0"

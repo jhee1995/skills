@@ -9,61 +9,108 @@ El **JC Multi-Agent SDLC Framework** es un conjunto de **17 habilidades (skills)
 
 ---
 
-## 📦 Instalación Rápida
+## 📦 Instalación — Sin clonar el repositorio
 
-Puedes instalar el framework en cualquier proyecto nuevo o existente en segundos mediante **npx**, **npm** o **scripts nativos**:
+Puedes instalar el framework **desde cualquier lugar**, sin necesidad de clonar el repositorio.
 
-### Opción 1: Con Node CLI (Recomendado — clona este repositorio)
+---
 
-Clona el repositorio y ejecuta directamente con Node:
+### 🌐 Opción 1: Instalación Global (Mac / Linux) — Recomendado
 
-```bash
-git clone <url-del-repositorio>
-cd jc-skills
-
-# Asistente interactivo de instalación
-node bin/cli.js init
-
-# O usa flags directos:
-node bin/cli.js init --local --all
-```
-
-#### Modos de instalación directa (Flags):
-```bash
-# 1. Instalar localmente en el proyecto actual (.agents/) con plantillas
-node bin/cli.js init --local --all
-
-# 2. Instalar globalmente en tu equipo (~/.gemini/config/skills)
-# Disponible para CUALQUIER proyecto abierto en Antigravity automáticamente
-node bin/cli.js init --global
-
-# 3. Listar todas las skills disponibles y su fase SDLC
-node bin/cli.js list
-
-# 4. Verificar estado de la instalación
-node bin/cli.js status
-```
-
-### Opción 2: Instalador en Bash (Linux / macOS / WSL) — Más simple
+Un solo comando instala `jc-skills` globalmente en tu máquina. El script detecta y corrige automáticamente el error de permisos `EACCES` en Mac:
 
 ```bash
-chmod +x ./install.sh
-./install.sh --local --all
+curl -fsSL https://raw.githubusercontent.com/jhee1995/skills/main/setup-global.sh | bash
 ```
 
-### Opción 3: Instalador en PowerShell (Windows)
+Después de esto, el comando `jc-skills` (y el alias corto `jc`) estará disponible en cualquier terminal:
+
+```bash
+# Instalar en cualquier proyecto actual:
+jc-skills init --local --all
+
+# Ver todas las skills:
+jc-skills list
+
+# Verificar instalación:
+jc-skills status
+```
+
+---
+
+### ⚡ Opción 2: Ejecución Directa con npx (sin instalar)
+
+Ejecuta el asistente interactivo directamente desde GitHub, sin instalar nada permanentemente:
+
+```bash
+npx github:jhee1995/skills init
+```
+
+Con flags directos:
+```bash
+# Instalar localmente con plantillas:
+npx github:jhee1995/skills init --local --all
+
+# Instalar en ~/.gemini/config/ (global para Antigravity):
+npx github:jhee1995/skills init --global
+
+# Ver todas las skills:
+npx github:jhee1995/skills list
+```
+
+---
+
+### 💻 Opción 3: Instalación Global Manual (npm)
+
+Si prefieres controlar el proceso manualmente:
+
+```bash
+# Mac/Linux: primero configura un prefijo npm de usuario (evita el error EACCES):
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc && source ~/.zshrc
+
+# Instalar desde GitHub:
+npm install -g github:jhee1995/skills
+
+# Verificar:
+jc-skills --version
+```
+
+---
+
+### 🖥️ Opción 4: Instalador PowerShell (Windows)
+
 ```powershell
-# Asistente interactivo
+# Desde la carpeta del proyecto clonado:
 .\install.ps1
 
-# Instalación Global (para todos los proyectos)
+# Instalación Global (para todos los proyectos):
 .\install.ps1 -Global
 
-# Instalación Local con plantillas
+# Instalación Local con plantillas:
 .\install.ps1 -Local -All
 ```
 
 ---
+
+### 📁 Opción 5: Desde el repositorio clonado
+
+```bash
+git clone https://github.com/jhee1995/skills.git
+cd skills
+
+# Instalación local interactiva:
+node bin/cli.js init
+
+# O directamente con flags:
+node bin/cli.js init --local --all
+bash install.sh --local --all
+```
+
+---
+
+
 
 ## 🏛️ Arquitectura del Ciclo de Vida SDLC
 
