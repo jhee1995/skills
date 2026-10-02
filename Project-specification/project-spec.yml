@@ -1,0 +1,14 @@
+name: "{{project_name}}"
+version: "1.0.0"
+architecture: "modular_monolith"
+directories:
+  - "src/{{package_name}}/domain"
+  - "src/{{package_name}}/application"
+  - "src/{{package_name}}/infrastructure"
+  - "src/{{package_name}}/presentation"
+  - "tests/unit"
+  - "tests/integration"
+  - "tests/e2e"
+files:
+  - "README.md"
+  - ".env.example"

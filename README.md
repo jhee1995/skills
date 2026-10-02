@@ -13,35 +13,45 @@ El **JC Multi-Agent SDLC Framework** es un conjunto de **17 habilidades (skills)
 
 Puedes instalar el framework en cualquier proyecto nuevo o existente en segundos mediante **npx**, **npm** o **scripts nativos**:
 
-### Opción 1: Con NPX / Node CLI (Recomendado)
+### Opción 1: Con Node CLI (Recomendado — clona este repositorio)
 
-Desde la carpeta de tu proyecto (o para instalarlo globalmente en tu máquina):
+Clona el repositorio y ejecuta directamente con Node:
 
 ```bash
-# Asistente interactivo de instalación
-npx jc-skills init
+git clone <url-del-repositorio>
+cd jc-skills
 
-# O si clonas este repositorio:
+# Asistente interactivo de instalación
 node bin/cli.js init
+
+# O usa flags directos:
+node bin/cli.js init --local --all
 ```
 
 #### Modos de instalación directa (Flags):
 ```bash
 # 1. Instalar localmente en el proyecto actual (.agents/) con plantillas
-npx jc-skills init --local --all
+node bin/cli.js init --local --all
 
 # 2. Instalar globalmente en tu equipo (~/.gemini/config/skills)
 # Disponible para CUALQUIER proyecto abierto en Antigravity automáticamente
-npx jc-skills init --global
+node bin/cli.js init --global
 
 # 3. Listar todas las skills disponibles y su fase SDLC
-npx jc-skills list
+node bin/cli.js list
 
 # 4. Verificar estado de la instalación
-npx jc-skills status
+node bin/cli.js status
 ```
 
-### Opción 2: Instalador en PowerShell (Windows)
+### Opción 2: Instalador en Bash (Linux / macOS / WSL) — Más simple
+
+```bash
+chmod +x ./install.sh
+./install.sh --local --all
+```
+
+### Opción 3: Instalador en PowerShell (Windows)
 ```powershell
 # Asistente interactivo
 .\install.ps1
@@ -51,12 +61,6 @@ npx jc-skills status
 
 # Instalación Local con plantillas
 .\install.ps1 -Local -All
-```
-
-### Opción 3: Instalador en Bash (Linux / macOS / WSL)
-```bash
-chmod +x ./install.sh
-./install.sh --local --all
 ```
 
 ---
@@ -149,14 +153,25 @@ El framework incorpora `AGENTS.md` y `rules/jc-sdlc-pipeline.md`, garantizando q
 
 ## 🌐 Publicación / Compartir
 
-Para enlazar este paquete localmente en tu sistema o publicarlo:
-```bash
-# Enlazar comando jc-skills globalmente en tu terminal
-npm link
+Para distribuir el paquete o habilitarlo como comando global en tu terminal:
 
-# O empaquetar para distribuir como .tgz
+```bash
+# Empaquetar para distribuir como .tgz
 npm pack
+
+# Instalar el .tgz localmente como comando global
+npm install -g ./jc-skills-1.0.0.tgz
 ```
+
+> [!NOTE]
+> **Mac/Linux**: Si obtienes un error `EACCES` al instalar globalmente, configura un prefijo npm de usuario
+> antes de ejecutar `npm install -g`:
+> ```bash
+> mkdir -p ~/.npm-global
+> npm config set prefix '~/.npm-global'
+> echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc && source ~/.zshrc
+> npm install -g ./jc-skills-1.0.0.tgz
+> ```
 
 ---
 

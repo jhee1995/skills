@@ -104,6 +104,19 @@ install_to_path() {
 }
 
 if [ "$DO_GLOBAL" = true ]; then
+  # Check if the global npm prefix is user-writable
+  NPM_PREFIX=$(npm config get prefix 2>/dev/null || echo "/usr/local")
+  GLOBAL_TARGET_DIR="$NPM_PREFIX/lib/node_modules"
+  if [ -d "$GLOBAL_TARGET_DIR" ] && [ ! -w "$GLOBAL_TARGET_DIR" ]; then
+    echo ""
+    echo "⚠️  WARNING: Global npm prefix '$NPM_PREFIX' is NOT writable by the current user."
+    echo "   If you intend to use 'npm install -g' or 'npm link' later, you will get an EACCES error."
+    echo "   Fix with:"
+    echo "     mkdir -p ~/.npm-global"
+    echo "     npm config set prefix '~/.npm-global'"
+    echo "     echo 'export PATH=~/.npm-global/bin:\$PATH' >> ~/.zshrc && source ~/.zshrc"
+    echo ""
+  fi
   install_to_path "$GLOBAL_SKILLS_DIR" "$GLOBAL_RULES_DIR" "" "" "Global Config ($GLOBAL_CONFIG_DIR)"
 fi
 

@@ -366,9 +366,7 @@ async function cmdInit(args) {
 function cmdHelp() {
   showBanner();
   console.log(`
-${c.boldWhite('Usage:')}
-  ${c.cyan('npx jc-skills')} ${c.yellow('<command>')} [options]
-  ${c.cyan('node bin/cli.js')} ${c.yellow('<command>')} [options]
+${c.boldWhite('Usage:')}\n  ${c.cyan('node bin/cli.js')} ${c.yellow('<command>')} [options]
 
 ${c.boldWhite('Commands:')}
   ${c.boldYellow('init')} | ${c.boldYellow('install')}   Interactive setup wizard to install the framework
@@ -387,16 +385,22 @@ ${c.boldWhite('Options:')}
 
 ${c.boldWhite('Examples:')}
   ${c.dim('# Interactive setup wizard:')}
-  ${c.cyan('npx jc-skills init')}
+  ${c.cyan('node bin/cli.js init')}
 
   ${c.dim('# Install locally in current project with all templates:')}
-  ${c.cyan('npx jc-skills init --local --all')}
+  ${c.cyan('node bin/cli.js init --local --all')}
 
   ${c.dim('# Install globally for all projects on your machine:')}
-  ${c.cyan('npx jc-skills init --global')}
+  ${c.cyan('node bin/cli.js init --global')}
 
   ${c.dim('# Check framework status:')}
-  ${c.cyan('npx jc-skills status')}
+  ${c.cyan('node bin/cli.js status')}
+
+  ${c.dim('# Make jc-skills a global terminal command (npm pack → install):')}
+  ${c.cyan('npm pack && npm install -g ./jc-skills-1.0.0.tgz')}
+  ${c.gray('  Note: On Mac/Linux, if you get EACCES run:')}
+  ${c.gray('  mkdir -p ~/.npm-global && npm config set prefix \'~/.npm-global\'')}
+  ${c.gray('  echo \'export PATH=~/.npm-global/bin:$PATH\' >> ~/.zshrc && source ~/.zshrc')}
 `);
 }
 
