@@ -4,24 +4,24 @@ package_name: "{{package_name}}"
 roles:
   - "admin"
   - "user"
-architecture: "modular_monolith"
+architecture: "{{architeture}}"
 backend:
-  language: "python"
-  framework: "fastapi"
+  language: "{{language}}"
+  framework: "{{framework_backend}}"
 frontend:
-  framework: "react"
-  styling: "tailwind"
+  framework: "{{framework_frontend}}"
+  styling: "{{styling}}"
 database:
-  engine: "postgresql"
-  orm: "sqlalchemy"
+  engine: "{{database}}"
+  orm: "{{orm}}"
 ai:
   enabled: false
   provider: null
   model: null
   vector_store: null
 cloud:
-  provider: "aws"
-  ci_cd: "github_actions"
+  provider: "{{could.provider}}"
+  ci_cd: "{{ci_cd}}"
 release_horizon: "mvp"
 target_scale: "initial"
 docs:
