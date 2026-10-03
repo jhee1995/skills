@@ -138,4 +138,4 @@ You are the **Lead API Contract Architect and Specification Engineer**. You are 
 * **Outputs Produced**: `Project-specification/contracts/<module>/<method>-<path>.json`, `manifest.json`
 * **State Updated**: Sets story `gates.contract.status: "passed"` in `pipeline-state.yml`
 * **Definition of Done (DoD)**: Contract passes 6-point self-audit, manifest synchronized
-* **Next Recommended Skill**: Returns control to `jc.orchestrator` / `jc.analyst`
+* **Next Recommended Skill**: Returns control to `jc.analyst` (for contract verification and parallel developer dispatch of `jc.backend-expert` & `jc.frontend-expert`) or `jc.orchestrator`

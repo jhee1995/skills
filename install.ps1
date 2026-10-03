@@ -20,11 +20,33 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-Write-Host ""
-Write-Host "========================================================================" -ForegroundColor Cyan
-Write-Host "   JC MULTI-AGENT SDLC FRAMEWORK INSTALLER (PowerShell)" -ForegroundColor White
-Write-Host "========================================================================" -ForegroundColor Cyan
-Write-Host ""
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+function Show-JCBanner {
+    $c_cyan    = "$([char]27)[36m"
+    $c_bcyan   = "$([char]27)[1;36m"
+    $c_bwhite  = "$([char]27)[1;37m"
+    $c_yellow  = "$([char]27)[33m"
+    $c_byellow = "$([char]27)[1;33m"
+    $c_green   = "$([char]27)[32m"
+    $c_bgreen  = "$([char]27)[1;32m"
+    $c_dim     = "$([char]27)[2m"
+    $c_gray    = "$([char]27)[90m"
+    $c_reset   = "$([char]27)[0m"
+
+    Write-Host @"
+
+  $c_gray┌─────────────────────────────────────────────────────────────┐$c_reset
+  $c_gray│$c_reset                                                             $c_gray│$c_reset
+  $c_gray│$c_reset   $c_bcyan■$c_reset $c_bwhiteJC FRAMEWORK$c_reset  ${c_byellow}v1.0.0$c_reset                                    $c_gray│$c_reset
+  $c_gray│$c_reset     ${c_dim}Multi-Agent SDLC Engineering Suite for Antigravity$c_reset      $c_gray│$c_reset
+  $c_gray│$c_reset     ${c_dim}Author:$c_reset ${c_cyan}Jhee1995$c_reset ${c_gray}|$c_reset ${c_bgreen}✔ 17 Specialized Skills Ready$c_reset        $c_gray│$c_reset
+  $c_gray│$c_reset                                                             $c_gray│$c_reset
+  $c_gray└─────────────────────────────────────────────────────────────┘$c_reset
+"@
+}
+
+Show-JCBanner
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $SkillsSrc = Join-Path $ScriptDir "skills"

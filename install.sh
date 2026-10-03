@@ -52,11 +52,29 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-echo ""
-echo "========================================================================"
-echo "   JC MULTI-AGENT SDLC FRAMEWORK INSTALLER (Bash)"
-echo "========================================================================"
-echo ""
+show_banner() {
+  local c_cyan="\033[36m"
+  local c_bcyan="\033[1;36m"
+  local c_bwhite="\033[1;37m"
+  local c_yellow="\033[33m"
+  local c_byellow="\033[1;33m"
+  local c_green="\033[32m"
+  local c_bgreen="\033[1;32m"
+  local c_dim="\033[2m"
+  local c_gray="\033[90m"
+  local c_reset="\033[0m"
+
+  echo ""
+  printf "  ${c_gray}┌─────────────────────────────────────────────────────────────┐${c_reset}\n"
+  printf "  ${c_gray}│${c_reset}                                                             ${c_gray}│${c_reset}\n"
+  printf "  ${c_gray}│${c_reset}   ${c_bcyan}■${c_reset} ${c_bwhite}JC FRAMEWORK${c_reset}  ${c_byellow}v1.0.0${c_reset}                                    ${c_gray}│${c_reset}\n"
+  printf "  ${c_gray}│${c_reset}     ${c_dim}Multi-Agent SDLC Engineering Suite for Antigravity${c_reset}      ${c_gray}│${c_reset}\n"
+  printf "  ${c_gray}│${c_reset}     ${c_dim}Author:${c_reset} ${c_cyan}Jhee1995${c_reset} ${c_gray}|${c_reset} ${c_bgreen}✔ 17 Specialized Skills Ready${c_reset}        ${c_gray}│${c_reset}\n"
+  printf "  ${c_gray}│${c_reset}                                                             ${c_gray}│${c_reset}\n"
+  printf "  ${c_gray}└─────────────────────────────────────────────────────────────┘${c_reset}\n\n"
+}
+
+show_banner
 
 if [ "$DO_GLOBAL" = false ] && [ "$DO_LOCAL" = false ] && [ -z "$DEST" ]; then
   echo "Where would you like to install the JC SDLC Framework?"

@@ -69,13 +69,16 @@ const GLOBAL_CONFIG_DIR = path.join(os.homedir(), '.gemini', 'config');
 const GLOBAL_SKILLS_DIR = path.join(GLOBAL_CONFIG_DIR, 'skills');
 const GLOBAL_RULES_DIR = path.join(GLOBAL_CONFIG_DIR, 'rules');
 
-// Banner
+// Minimalist Badge Banner (Vercel / Next.js / PNPM style)
 function showBanner() {
   console.log(`
-${colors.boldCyan}========================================================================${colors.reset}
-${colors.boldWhite}   JC MULTI-AGENT SDLC FRAMEWORK ${colors.yellow}v${VERSION}${colors.reset}
-${colors.dim}   Autonomous 17-Skill SDLC Engineering Suite for Google Antigravity${colors.reset}
-${colors.boldCyan}========================================================================${colors.reset}
+  ${colors.gray}┌─────────────────────────────────────────────────────────────┐${colors.reset}
+  ${colors.gray}│${colors.reset}                                                             ${colors.gray}│${colors.reset}
+  ${colors.gray}│${colors.reset}   ${colors.boldCyan}■${colors.reset} ${colors.boldWhite}JC FRAMEWORK${colors.reset}  ${colors.boldYellow}v${VERSION}${colors.reset}                                    ${colors.gray}│${colors.reset}
+  ${colors.gray}│${colors.reset}     ${colors.dim}Multi-Agent SDLC Engineering Suite for Antigravity${colors.reset}      ${colors.gray}│${colors.reset}
+  ${colors.gray}│${colors.reset}     ${colors.dim}Author:${colors.reset} ${colors.cyan}Jhee1995${colors.reset} ${colors.gray}|${colors.reset} ${colors.boldGreen}✔ 17 Specialized Skills Ready${colors.reset}        ${colors.gray}│${colors.reset}
+  ${colors.gray}│${colors.reset}                                                             ${colors.gray}│${colors.reset}
+  ${colors.gray}└─────────────────────────────────────────────────────────────┘${colors.reset}
 `);
 }
 
