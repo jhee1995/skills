@@ -1,6 +1,6 @@
 name: "{{project_name}}"
 version: "1.0.0"
-architecture: "modular_monolith"
+architecture: "{{architecture}}"
 directories:
   - "src/{{package_name}}/domain"
   - "src/{{package_name}}/application"
